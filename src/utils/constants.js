@@ -1,0 +1,129 @@
+export const JUDGE_STATUS = {
+  '-2': {
+    name: 'Compile Error',
+    short: 'CE',
+    color: '#f57c00',
+    type: 'warning'
+  },
+  '-1': {
+    name: 'Wrong Answer',
+    short: 'WA',
+    color: '#c62828',
+    type: 'error'
+  },
+  '0': {
+    name: 'Accepted',
+    short: 'AC',
+    color: '#2e7d32',
+    type: 'success'
+  },
+  '1': {
+    name: 'Time Limit Exceeded',
+    short: 'TLE',
+    color: '#ef6c00',
+    type: 'error'
+  },
+  '2': {
+    name: 'Time Limit Exceeded',
+    short: 'TLE',
+    color: '#ef6c00',
+    type: 'error'
+  },
+  '3': {
+    name: 'Memory Limit Exceeded',
+    short: 'MLE',
+    color: '#1565c0',
+    type: 'error'
+  },
+  '4': {
+    name: 'Runtime Error',
+    short: 'RE',
+    color: '#6a1b9a',
+    type: 'error'
+  },
+  '5': {
+    name: 'System Error',
+    short: 'SE',
+    color: '#c62828',
+    type: 'error'
+  },
+  '6': {
+    name: 'Pending',
+    color: '#f57c00',
+    type: 'warning'
+  },
+  '7': {
+    name: 'Judging',
+    color: '#1565c0',
+    type: 'info'
+  },
+  '8': {
+    name: 'Partial Accepted',
+    short: 'PAC',
+    color: '#00897b',
+    type: 'info'
+  },
+  '9': {
+    name: 'Submitting',
+    color: '#f57c00',
+    type: 'warning'
+  }
+}
+
+export const CONTEST_STATUS = {
+  'NOT_START': '1',
+  'UNDERWAY': '0',
+  'ENDED': '-1'
+}
+
+export const CONTEST_STATUS_REVERSE = {
+  '1': {
+    name: 'Not Started',
+    color: '#f57c00'
+  },
+  '0': {
+    name: 'Underway',
+    color: '#2e7d32'
+  },
+  '-1': {
+    name: 'Ended',
+    color: '#c62828'
+  }
+}
+
+export const RULE_TYPE = {
+  ACM: 'ACM',
+  OI: 'OI'
+}
+
+export const CONTEST_TYPE = {
+  PUBLIC: 'Public',
+  PRIVATE: 'Password Protected'
+}
+
+export const USER_TYPE = {
+  REGULAR_USER: 'Regular User',
+  ADMIN: 'Admin',
+  SUPER_ADMIN: 'Super Admin'
+}
+
+export const PROBLEM_PERMISSION = {
+  NONE: 'None',
+  OWN: 'Own',
+  ALL: 'All'
+}
+
+export const STORAGE_KEY = {
+  AUTHED: 'authed',
+  PROBLEM_CODE: 'problemCode',
+  languages: 'languages'
+}
+
+export function buildProblemCodeKey (problemID, contestID = null) {
+  if (contestID) {
+    return `${STORAGE_KEY.PROBLEM_CODE}_${contestID}_${problemID}`
+  }
+  return `${STORAGE_KEY.PROBLEM_CODE}_NaN_${problemID}`
+}
+
+export const GOOGLE_ANALYTICS_ID = 'UA-111499601-1'
